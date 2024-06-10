@@ -1,0 +1,37 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #005f73;
+    padding: 10px;
+    color: white;
+}
+
+.menu-hamburguesa {
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff3e6;
+}
+
+.buscar input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 500px;
+    margin-left: 50px;
+    background-color: #fff3e6;
+}
+
+.iniciar-sesion {
+    background-color: #fff3e6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    margin-right: 20px;
+}
+
+.iniciar-sesion:hover {
+    background-color: bisque;
+}

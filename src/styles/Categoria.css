@@ -1,0 +1,35 @@
+.categorias {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.categoria {
+    background-color: #fff3e6;
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.categoria .icono {
+    background-color: #ccc;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+}
+
+.categoria:hover {
+    background-color: bisque;
+    cursor: pointer;
+}
+
+.categoria img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}

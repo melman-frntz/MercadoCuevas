@@ -1,0 +1,56 @@
+.menu-deslizable {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #005f73;
+    transition: left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    color: white;
+}
+
+.menu-deslizable.open {
+    left: 0;
+}
+
+.cerrar {
+    align-self: flex-end;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.cerrar-sesion {
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+}
+
+.cerrar-sesion svg {
+    margin-left: 10px;
+}
+
+.cerrar-sesion:hover {
+    background-color: cadetblue;
+}
+
+.opciones {
+    background-color: transparent;
+    width: 250px;
+    text-align: left;
+}
+
+.opciones:hover {
+    background-color: cadetblue;
+}
