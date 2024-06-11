@@ -15,7 +15,7 @@
 }
 
 .login-container {
-    background-color: #d3d3d3;
+    background-color: white;
     text-align: center;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .register-container {
-    background-color: #0077b6;
+    background-color: #005f73;
     color: white;
     text-align: center;
     padding: 40px;
@@ -35,7 +35,7 @@ input {
     width: 80%;
     padding: 10px;
     margin: 10px auto;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 5px;
 }
 
@@ -51,7 +51,7 @@ button {
 
 .register-container button {
     background-color: white;
-    color: #0077b6;
+    color: #005f73;
     border: 2px solid white;
     margin-top: 20px;
 }

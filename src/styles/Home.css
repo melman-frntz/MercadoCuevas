@@ -2,10 +2,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 main {
-    padding: 20px;
+    padding: 0;
+    height: calc(100vh - 50px);
+}
+
+.content {
+    height: 100%;
 }
 
 h1 {
