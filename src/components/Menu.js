@@ -7,10 +7,10 @@ const Menu = ({ isOpen, toggleMenu, setCurrentView }) => {
         <aside className={`menu-deslizable ${isOpen ? 'open' : ''}`}>
             <button className="cerrar" onClick={toggleMenu}>X</button>
             <button className="opciones" onClick={() => { setCurrentView(''); toggleMenu(); }}>Información de producto</button>
-            <button className="opciones" onClick={() => { setCurrentView(''); toggleMenu(); }}>Carrito de compras</button>
+            <button className="opciones" onClick={() => { setCurrentView('addressForm'); toggleMenu(); }}>Registrar dirección</button>
             <button className="opciones" onClick={() => { setCurrentView('dashboard'); toggleMenu(); }}>Mi perfil</button>
-            <button className="opciones" onClick={() => { setCurrentView(''); toggleMenu(); }}>Gestionar método de pago</button>
-            <button className="opciones" onClick={() => { setCurrentView(''); toggleMenu(); }}>Registrar dirección</button>
+            <button className="opciones" onClick={() => { setCurrentView('paymentMethod'); toggleMenu(); }}>Gestionar método de pago</button>
+            <button className="opciones" onClick={() => { setCurrentView('branchForm'); toggleMenu(); }}>Registrar sucursal</button>
             <button className="cerrar-sesion">Cerrar sesión <IoExit /> </button>
         </aside>
     );

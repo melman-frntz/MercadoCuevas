@@ -1,0 +1,58 @@
+.branch-form {
+    background-color: #ffebcd;
+    padding: 20px;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    margin: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.branch-form h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.form-group:last-child {
+    margin-right: 0;
+}
+
+.form-group label {
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.submit-button {
+    background-color: #006064;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    float: right;
+}
+
+.submit-button:hover {
+    background-color: #004d4d;
+}

@@ -3,6 +3,9 @@ import Header from './Header';
 import MenuDeslizable from './Menu';
 import Categorias from './Categoria';
 import Dashboard from './Profile/Dashboard';
+import PaymentMethod from './PaymentMethod/RegisterPaymentMethod';
+import AddressForm from './Address/AddressForm';
+import BranchForm from './Branch/BranchForm';
 import { FaUser, FaLock, FaStore, FaBox, FaHistory } from 'react-icons/fa';
 import { MdDeliveryDining, MdOutlineProductionQuantityLimits } from 'react-icons/md';
 import { FaMapLocationDot, FaMoneyCheck } from 'react-icons/fa6';
@@ -36,6 +39,12 @@ function Home() {
         switch (currentView) {
             case 'dashboard':
                 return <Dashboard items={items} />;
+            case 'paymentMethod':
+                return <PaymentMethod />;
+            case 'addressForm':
+                return <AddressForm />;
+            case 'branchForm':
+                return <BranchForm />;
             default:
                 return (
                     <div className="content">
