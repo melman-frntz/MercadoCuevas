@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import '../styles/Login.css';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 
 const Login = () => {
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const { login } = useAuth();
+    const navigate = useNavigate();
 
     const handleLogin = async (event) => {
         event.preventDefault();
@@ -15,23 +18,12 @@ const Login = () => {
         }
 
         try {
-            // TODO: Autenticación con la API
-            const response = await new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    if (phone === 'phone' && password === 'password') {
-                        resolve({ message: 'Login exitoso' });
-                    } else {
-                        reject({ message: 'Credenciales incorrectas' });
-                    }
-                }, 1000);
-            });
-            
+            await login (phone, password);
+            navigate('/');         
         } catch (err) {
             setError('Error en el inicio de sesión');
         }
     };
-
-    const navigate = useNavigate();
 
     const handleRegisterClick = () => {
       navigate('/register');

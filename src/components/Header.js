@@ -1,12 +1,19 @@
 import React from 'react';
 import '../styles/Header.css';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 
 const Header = ({ toggleMenu }) => {
     const navigate = useNavigate();
+    const { token, logout } = useAuth();
 
     const handleLoginClick = () => {
       navigate('/Login');
+    };
+
+    const handleLogoutClick = () => {
+        logout();
+        navigate('/login');
     };
 
     return (
