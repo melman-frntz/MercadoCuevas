@@ -1,11 +1,15 @@
+.branch-form-container {
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
 .branch-form {
     background-color: #ffebcd;
     padding: 20px;
     border: 1px solid #d3d3d3;
     border-radius: 10px;
-    margin: 20px;
-    max-width: 1200px;
-    margin: auto;
+    margin: 20px auto;
+    max-width: 1000px;
 }
 
 .branch-form h2 {
@@ -30,8 +34,12 @@
     margin-right: 0;
 }
 
+.form-group.full-width {
+    flex: 2;
+}
+
 .form-group label {
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
@@ -39,7 +47,7 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 80%;
+    width: 90%;
 }
 
 .submit-button {
@@ -49,7 +57,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 44px;
     float: right;
 }
 

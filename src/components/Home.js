@@ -55,11 +55,13 @@ function Home() {
         }
     };
 
+    const needsScroll = ['paymentMethod', 'addressForm', 'branchForm'];
+
     return (
         <div className="Home">
             <Header toggleMenu={toggleMenu} />
             <MenuDeslizable isOpen={menuOpen} toggleMenu={toggleMenu} setCurrentView={handleCategoryClick} />
-            <main>
+            <main className={needsScroll.includes(currentView) ? 'scrollable' : ''}>
                 {renderContent()}
             </main>
         </div>

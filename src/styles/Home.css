@@ -17,3 +17,8 @@ main {
 h1 {
     text-align: center;
 }
+
+.scrollable {
+    height: calc(100vh - 60px); /* Ajustar según sea necesario */
+    overflow-y: auto;
+}
