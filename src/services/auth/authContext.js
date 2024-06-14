@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
-import { login as loginService } from './authService';
+import { login as loginService, loginConsumer as loginConsumerService } from './authService';
 
 const AuthContext = createContext();
 
@@ -12,13 +12,21 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem('token', access_token);
     };
 
+    const loginConsumer = async (username, password) => {
+        const { access_token } = await loginConsumerService(username, password);
+        setToken(access_token);
+        localStorage.setItem('token', access_token);
+    };
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
     const logout = () => {
         setToken('');
         localStorage.removeItem('token');
     };
 
     return (
-        <AuthContext.Provider value={{ token, login, logout }}>
+        <AuthContext.Provider value={{ token, login, loginConsumer, logout, isLoggedIn, setIsLoggedIn }}>
             {children}
         </AuthContext.Provider>
     );

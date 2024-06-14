@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../styles/Header.css';
+import { AuthContext } from '../services/auth/authContext';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 
 const Header = ({ toggleMenu }) => {
     const navigate = useNavigate();
     const { token, logout } = useAuth();
+    const { isLoggedIn } = useContext(AuthContext);
 
     const handleLoginClick = () => {
       navigate('/Login');
@@ -22,7 +24,7 @@ const Header = ({ toggleMenu }) => {
             <div className="buscar">
                 <input type="text" placeholder="Buscar en Mercado Cuevas" />
             </div>
-            <button className="iniciar-sesion" onClick={handleLoginClick}>Iniciar sesión</button>
+            {!isLoggedIn && <button className="iniciar-sesion" onClick={handleLoginClick}>Iniciar sesión</button>}
         </header>
     );
 };

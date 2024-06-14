@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Header from './Header';
 import MenuDeslizable from './Menu';
 import Categorias from './Categoria';
@@ -6,6 +6,7 @@ import Dashboard from './Profile/Dashboard';
 import PaymentMethod from './PaymentMethod/RegisterPaymentMethod';
 import AddressForm from './Address/AddressForm';
 import BranchForm from './Branch/BranchForm';
+import { AuthContext } from '../services/auth/authContext';
 import { FaUser, FaLock, FaStore, FaBox, FaHistory } from 'react-icons/fa';
 import { MdDeliveryDining, MdOutlineProductionQuantityLimits } from 'react-icons/md';
 import { FaMapLocationDot, FaMoneyCheck } from 'react-icons/fa6';
@@ -26,6 +27,7 @@ const items = [
 function Home() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [currentView, setCurrentView] = useState('home');
+    const { isLoggedIn } = useContext(AuthContext);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -59,8 +61,8 @@ function Home() {
 
     return (
         <div className="Home">
-            <Header toggleMenu={toggleMenu} />
-            <MenuDeslizable isOpen={menuOpen} toggleMenu={toggleMenu} setCurrentView={handleCategoryClick} />
+            <Header toggleMenu={toggleMenu}/>
+            <MenuDeslizable isOpen={menuOpen} toggleMenu={toggleMenu} setCurrentView={handleCategoryClick}/>
             <main className={needsScroll.includes(currentView) ? 'scrollable' : ''}>
                 {renderContent()}
             </main>
