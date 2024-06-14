@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Register.css';
+import { useAuth } from '../services/auth/authContext';
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
@@ -7,11 +8,15 @@ const Register = () => {
     const [apellidoPaterno, setApellidoPaterno] = useState('');
     const [apellidoMaterno, setApellidoMaterno] = useState('');
     const [numeroTelefono, setNumeroTelefono] = useState('');
+    const [fechaNacimiento, setFechaNacimiento] = useState('');
     const [contraseña, setContraseña] = useState('');
     const [confirmarContraseña, setConfirmarContraseña] = useState('');
     const [error, setError] = useState('');
 
-    const handleSubmit = (event) => {
+    const { registerConsumer } = useAuth();
+    const navigate = useNavigate();
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         if (contraseña !== confirmarContraseña) {
@@ -19,13 +24,21 @@ const Register = () => {
             return;
         }
 
-        //TODO: Logica de registrar.
+        try {
+            await registerConsumer(
+                { nombres: nombre, apellidoPaterno, apellidoMaterno },
+                numeroTelefono,
+                fechaNacimiento,
+                contraseña
+            );
+            navigate('/login');
+        } catch (err) {
+            setError('Error en el registro del consumidor');
+        }
     };
 
-    const navigate = useNavigate();
-
     const handleLoginClick = () => {
-      navigate('/login');
+        navigate('/login');
     };
 
     return (
@@ -69,6 +82,14 @@ const Register = () => {
                         placeholder='Número de teléfono'
                         value={numeroTelefono}
                         onChange={(e) => setNumeroTelefono(e.target.value)}
+                        required
+                    />
+                    <input
+                        type='date'
+                        id='fechaNacimiento'
+                        placeholder='Fecha de nacimiento'
+                        value={fechaNacimiento}
+                        onChange={(e) => setFechaNacimiento(e.target.value)}
                         required
                     />
                     <input

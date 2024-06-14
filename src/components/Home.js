@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import Header from './Header';
 import MenuDeslizable from './Menu';
 import Categorias from './Categoria';
+import RegisterEmployee from './RegisterEmployee';
 import Dashboard from './Profile/Dashboard';
 import PaymentMethod from './PaymentMethod/RegisterPaymentMethod';
 import AddressForm from './Address/AddressForm';
@@ -47,6 +48,8 @@ function Home() {
                 return <AddressForm />;
             case 'branchForm':
                 return <BranchForm />;
+            case 'registerEmployee':
+                return <RegisterEmployee />;
             default:
                 return (
                     <div className="content">
@@ -57,7 +60,7 @@ function Home() {
         }
     };
 
-    const needsScroll = ['paymentMethod', 'addressForm', 'branchForm'];
+    const needsScroll = ['paymentMethod', 'addressForm', 'branchForm', 'registerEmployee'];
 
     return (
         <div className="Home">

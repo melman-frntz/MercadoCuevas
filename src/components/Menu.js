@@ -25,6 +25,7 @@ const Menu = ({ isOpen, toggleMenu, setCurrentView}) => {
             <button className="opciones" onClick={() => { setCurrentView('dashboard'); toggleMenu(); }}>Mi perfil</button>
             <button className="opciones" onClick={() => { setCurrentView('paymentMethod'); toggleMenu(); }}>Gestionar método de pago</button>
             <button className="opciones" onClick={() => { setCurrentView('branchForm'); toggleMenu(); }}>Registrar sucursal</button>
+            <button className="opciones" onClick={() => { setCurrentView('registerEmployee'); toggleMenu(); }}>Registrar empleado</button>
             {isLoggedIn && <button className="cerrar-sesion" onClick={handleLogoutClick}>Cerrar sesión <IoExit /></button>}
         </aside>
     );
