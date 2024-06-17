@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../styles/Branch/BranchForm.css';
+import '../styles/BranchForm.css';
 
 const BranchForm = () => {
     const [openingTime, setOpeningTime] = useState('');

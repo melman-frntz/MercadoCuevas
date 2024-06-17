@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Address/AddressForm.css';
+import '../styles/AddressForm.css';
 
 const AddressForm = () => {
     return (

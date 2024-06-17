@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Profile/Dashboard.css';
+import '../styles/Dashboard.css';
 
 const Dashboard = ({ items }) => {
     return (
